@@ -28,5 +28,9 @@
     "babel-core": "^6.17.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0"
+  },
+  "repository": {
+    "url": "git@github.com:eanplatter/necromancer.git",
+    "type": "git"
   }
 }
