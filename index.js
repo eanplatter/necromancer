@@ -1,14 +1,30 @@
 #!/usr/bin/env node
 import shell from 'shelljs'
 
-const templateName = process.argv[2]
-const word = process.argv[3]
-const newFile = process.argv[4]
-console.log('template name', templateName)
-console.log('the word', word)
-console.log('the newFile', newFile)
-console.log(process.env.PWD)
+const command = process.argv[2]
+const arg1 = process.argv[3]
+const arg2 = process.argv[4]
 
-shell.cp(`~/.spells/${templateName}`, `${process.env.PWD}/${newFile}`)
+function deepCompare(src, target) {
+  const tArray = target.split('')
+  if (src.length !== target.length) {
+    return false
+  }
+  const filtered = tArray.filter((l, i) => {
+    if (src[i] === l) {
+      return l
+    } else if (src[i] === l.toUpperCase()) {
+      return l
+    } 
+  }) 
+  if (filtered.length === src.length) {
+    return true
+  }
+}
+
+if (deepCompare(command, 'help')) {
+  console.log('YOU NEED HELP like this', command)
+}
 
 
+// shell.cp(`~/.spells/${templateName}`, `${process.env.PWD}/${newFile}`)
