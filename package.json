@@ -2,10 +2,10 @@
   "name": "necromancer",
   "version": "0.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "babel index.js -d bin",
-    "dev": "nodemon --exec \"npm start --silent\" --watch index.js",
+    "build": "babel src/ -d bin",
+    "dev": "nodemon --exec \"npm start --silent\" --watch src/",
     "prebuild": "rimraf bin",
     "prestart": "npm run build --silent",
     "start": "node bin/index.js",
